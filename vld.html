@@ -1,0 +1,58 @@
+<html>
+	<style>
+		.vd
+		{
+			width: auto;
+			height: auto;
+			/* background-image:url('01.jpg'); */
+			image-rendering: auto;
+			color:white;
+		}
+	</style>
+<body>
+<div class="vd">
+<table border="3" style="margin-left:auto;margin-right:auto;min-height:500px;min-width:1000px">
+<tr>
+	<th colspan=2 style="background-color:pink;">validation Form</th>
+</tr>
+	
+<tr><th>Please Enter Name :</th>   <td> <input type="text" id="nm1"></td></tr>
+<tr><th>please Enter Email Id : </th> <td><input type="text" id="eml"></td></tr>
+</tr> <th colspan=2 style="background-color:purple;"><button  type="button" onclick="ckk()" style="background-color:pink;"> Click Me </button></th> </tr>
+</table>
+</div>
+<script>
+function ckk()
+{
+	var nm = parseInt(document.getElementById("nm1").value);
+	var eml = document.getElementById("eml").value;
+	
+	if(eml=="" || eml==null)
+	{
+		alert("Please Enter value")
+		return false;
+	}
+	var evd =/^[a-zA-Z0-9_]+@[a-zA-Z]+\.[a-zA-Z]{2,4}$/;
+	if(!evd.test(eml))
+	{
+		alert("Enter valid email Id");
+		return false;
+	}
+	
+	
+	if(nm=="" || nm==null)
+	{
+		alert('Please Enter value');
+		return false;
+	}
+	chk = /^[0-9]{10,12}$/;
+	if(!chk.test(nm))
+	{
+		alert("Enter Currect Number");
+	}
+	
+	document.write("saved");
+}
+</script>
+</body>
+</html>
